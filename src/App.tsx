@@ -1,7 +1,6 @@
+import { router } from "./routes";
+import { RouterProvider } from "react-router-dom";
+
 export function App() {
-  return (
-    <>
-      <div>React Material UI</div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
