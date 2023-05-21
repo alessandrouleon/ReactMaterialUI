@@ -1,6 +1,9 @@
-import { Navigate, Route, Routes, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { Cidades } from "../pages/cidades";
 import ErrorPage from "../shared/err";
+import { Button } from "@mui/material";
+
+import { DashBoard } from "../pages/dashBoard";
 
 // export const AppRoutes = () => {
 //   return (
@@ -13,10 +16,18 @@ import ErrorPage from "../shared/err";
 // };
 
 export const router = createBrowserRouter([
-  { path: "/pagina-inicial", element: <p>Pagian Inicial</p> },
   {
     path: "/cidades",
     element: <Cidades />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/",
+    element: (
+      <p>
+        <DashBoard />
+      </p>
+    ),
     errorElement: <ErrorPage />,
   },
 ]);
